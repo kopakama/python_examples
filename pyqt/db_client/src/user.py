@@ -1,6 +1,7 @@
 import psycopg2
 from contextlib import closing
 
+
 class User(object) :
     def __init__(self, login:str, password:str) :
         self.login = login
@@ -8,7 +9,7 @@ class User(object) :
 
     def getNamesTables(self) :
         with closing(psycopg2.connect(
-            dbname="agency",
+            dbname="mydb",
             user=self.login,
             password=self.password,
             host="localhost"
@@ -27,9 +28,9 @@ class User(object) :
 
                 return result
 
-    def selectFromTable(self, table="department") :
+    def selectFromTable(self, table="country") :
         with closing(psycopg2.connect(
-            dbname="agency",
+            dbname="mydb",
             user=self.login,
             password=self.password,
             host="localhost"
@@ -42,9 +43,9 @@ class User(object) :
                 )
                 return cursor.fetchall()
 
-    def showColumnsFromDatabase(self, table="department") :
+    def showColumnsFromDatabase(self, table="country") :
         with closing(psycopg2.connect(
-            dbname="agency",
+            dbname="mydb",
             user=self.login,
             password=self.password,
             host="localhost"
@@ -110,7 +111,7 @@ class User(object) :
 
         sql += """ WHERE """ + headers[0] + """ = %s """
         with closing(psycopg2.connect(
-            dbname="agency",
+            dbname="mydb",
             user=self.login,
             password=self.password,
             host="localhost"

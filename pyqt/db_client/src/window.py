@@ -81,7 +81,7 @@ class Program(QMainWindow) :
         """
         try :
             with closing(psycopg2.connect(
-                dbname="agency",
+                dbname="mydb",
                 user=login,
                 password=password,
                 host="localhost"
@@ -247,7 +247,7 @@ class Program(QMainWindow) :
             QMessageBox.Yes
         )
 
-    def setTable(self, title="department") :
+    def setTable(self, title="country") :
         self.setMinimumSize(QSize(480, 80))
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)

@@ -6,11 +6,12 @@ from PyQt5.QtWidgets import (
     QWidget, QTableWidgetItem
 )
 
+
 class DatabaseTable(QTableWidget) :
     deleteIndexes = []
     insertIndexes = []
 
-    def fillingTable(self, window, nametable="department") :
+    def fillingTable(self, window, nametable="country") :
         self.currentTable = nametable
 
         data = window.usr.selectFromTable(table=nametable)
