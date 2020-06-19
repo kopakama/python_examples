@@ -28,7 +28,7 @@ class User(object) :
 
                 return result
 
-    def selectFromTable(self, table="country") :
+    def selectFromTable(self, table="Страны") :
         with closing(psycopg2.connect(
             dbname="mydb",
             user=self.login,
@@ -43,7 +43,7 @@ class User(object) :
                 )
                 return cursor.fetchall()
 
-    def showColumnsFromDatabase(self, table="country") :
+    def showColumnsFromDatabase(self, table="Страны") :
         with closing(psycopg2.connect(
             dbname="mydb",
             user=self.login,

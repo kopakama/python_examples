@@ -247,7 +247,7 @@ class Program(QMainWindow) :
             QMessageBox.Yes
         )
 
-    def setTable(self, title="country") :
+    def setTable(self, title="Страны") :
         self.setMinimumSize(QSize(480, 80))
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)

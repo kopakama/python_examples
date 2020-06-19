@@ -11,7 +11,7 @@ class DatabaseTable(QTableWidget) :
     deleteIndexes = []
     insertIndexes = []
 
-    def fillingTable(self, window, nametable="country") :
+    def fillingTable(self, window, nametable="Страны") :
         self.currentTable = nametable
 
         data = window.usr.selectFromTable(table=nametable)
